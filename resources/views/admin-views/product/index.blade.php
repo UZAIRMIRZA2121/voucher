@@ -791,7 +791,9 @@
                             <div class="form-group">
 
                                 <div class="d-flex gap-3">
-
+                                    <!-- Containers for QR code and barcode -->
+                                    <div id="qrcode"></div>
+                                    <svg id="barcode"></svg>
                                 </div>
                             </div>
                         </div>
@@ -1414,5 +1416,41 @@
                 }
             });
         })
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let qr;
+
+            $('#default_name').on('keyup', function() {
+                const inputVal = $(this).val();
+
+                // Generate QR code
+                $('#qrcode').empty(); // Clear previous QR
+                if (inputVal) {
+                    qr = new QRCode(document.getElementById("qrcode"), {
+                        text: inputVal,
+                        width: 100,
+                        height: 100
+                    });
+                }
+
+                // Generate Barcode
+                if (inputVal) {
+                    JsBarcode("#barcode", inputVal, {
+                        format: "CODE128",
+                        lineColor: "#000",
+                        width: 2,
+                        height: 50,
+                        displayValue: false
+                    });
+                } else {
+                    $("#barcode").empty(); // Clear barcode if empty
+                }
+            });
+        });
     </script>
 @endpush

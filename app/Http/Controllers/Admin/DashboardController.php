@@ -145,6 +145,7 @@ class DashboardController extends Controller
         $deliveryMen = Helpers::deliverymen_list_formatting($deliveryMen);
 
         $module_type = Config::get('module.current_module_type');
+       
         return view("admin-views.dashboard-{$module_type}", compact('data','reviews','this_month','user_data','neutral_reviews','good_reviews','negative_reviews','positive_reviews','employees','active_deliveryman','deliveryMen','inactive_deliveryman','newly_joined_deliveryman','delivery_man', 'total_sell', 'commission', 'delivery_commission', 'params','module_type', 'customers','active_customers','blocked_customers', 'newly_joined','last_year_users', 'blocked_deliveryman'));
     }
 
@@ -156,6 +157,7 @@ class DashboardController extends Controller
 
     public function dispatch_dashboard(Request $request)
     {
+       
         $params = [
             'zone_id' => $request['zone_id'] ?? 'all',
             'module_id' => Config::get('module.current_module_id'),
@@ -221,6 +223,7 @@ class DashboardController extends Controller
 
     public function dashboard(Request $request)
     {
+     
         $params = [
             'zone_id' => $request['zone_id'] ?? 'all',
             'module_id' => Config::get('module.current_module_id'),
@@ -239,6 +242,7 @@ class DashboardController extends Controller
         if($module_type == 'settings'){
             return redirect()->route('admin.business-settings.business-setup');
         }
+      
         return view("admin-views.dashboard-{$module_type}", compact('data', 'total_sell', 'commission', 'delivery_commission', 'label','params','module_type'));
 
     }

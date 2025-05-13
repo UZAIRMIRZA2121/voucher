@@ -126,7 +126,7 @@ $countryCode= strtolower($country?$country->value:'auto');
                             <a class="cmn--btn me-xl-auto py-2" href="{{ $fixed_link['web_app_url'] }}" target="_blank">{{ translate('messages.browse_web') }}</a>
                         </div>
                     @endif
-                    @if (isset($toggle_dm_registration) || isset($toggle_store_registration))
+                    {{-- @if (isset($toggle_dm_registration) || isset($toggle_store_registration)) --}}
                     {{-- <div class="dropdown--btn-hover position-relative">
                         <a class="dropdown--btn header--btn text-capitalize d-flex align-items-center" href="javascript:void(0)">
                             <span class="me-1">{{ translate('Join us') }}</span>
@@ -157,7 +157,7 @@ $countryCode= strtolower($country?$country->value:'auto');
                         @endif
                         </ul>
                     </div> --}}
-                    @endif
+                    {{-- @endif --}}
                     <div class="dropdown--btn-hover position-relative">
                         <a class="dropdown--btn header--btn text-capitalize d-flex align-items-center" href="javascript:void(0)">
                             <span class="me-1">{{ translate('Join us') }}</span>
@@ -180,11 +180,11 @@ $countryCode= strtolower($country?$country->value:'auto');
                                     <hr class="dropdown-divider">
                                 </li>
                            
-                        @if ($toggle_dm_registration)
+                        {{-- @if ($toggle_dm_registration) --}}
                             <li><a class=""
                                     href="{{ route('deliveryman.create') }}">{{ translate('messages.deliveryman_registration') }}</a>
                             </li>
-                        @endif
+                        {{-- @endif --}}
                         </ul>
                     </div>
                 </div>

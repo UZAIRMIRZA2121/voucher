@@ -2,7 +2,7 @@
 
 return [
     'module_type'=>[
-        'grocery', 'food', 'pharmacy', 'ecommerce','parcel'
+        'grocery', 'food', 'pharmacy', 'ecommerce','parcel','voucher'
     ],
 
     'grocery'=>[

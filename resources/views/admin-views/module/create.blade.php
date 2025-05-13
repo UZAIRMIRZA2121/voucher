@@ -113,7 +113,7 @@
                 </div>
                 <input type="hidden" name="lang[]" value="default">
                 @endif
-                {{--<div class="row mt-2">
+             <div class="row mt-2">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="input-label" for="module_type">{{translate('messages.business_module_type')}}</label>
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
         <br>
